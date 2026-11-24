@@ -1,6 +1,7 @@
 -- LOGOWANIA W CIĄGU OSTATNICH 7 DNI
 SELECT * FROM logins
-WHERE NOW() - login_time < INTERVAL '7 days';
+WHERE login_time >= NOW() - INTERVAL '7 days'
+  AND login_time <= NOW();
 
 -- GDZIE USER_ID = 2
 SELECT * FROM logins
